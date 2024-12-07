@@ -1,0 +1,335 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "title": "Root Schema",
+  "type": "object",
+  "default": {},
+  "required": [
+      "date",
+      "email",
+      "validation_type",
+      "success",
+      "errors",
+      "smtp_debug",
+      "configuration"
+  ],
+  "additionalProperties": false,
+  "properties": {
+      "date": {
+          "title": "The date Schema",
+          "type": "string",
+          "default": "",
+          "examples": [
+              "2022-11-03 10:33:00 +0100"
+          ]
+      },
+      "email": {
+          "title": "The email Schema",
+          "type": "string",
+          "default": "",
+          "examples": [
+              "email@true.com"
+          ]
+      },
+      "validation_type": {
+          "title": "The validation_type Schema",
+          "type": "string",
+          "default": "",
+          "examples": [
+              "whitelist"
+          ]
+      },
+      "success": {
+          "title": "The success Schema",
+          "type": "boolean",
+          "default": false,
+          "examples": [
+              true
+          ]
+      },
+      "errors": {
+          "title": "The errors Schema",
+          "type": "null",
+          "default": null,
+          "examples": [
+              null
+          ]
+      },
+      "smtp_debug": {
+          "title": "The smtp_debug Schema",
+          "type": "null",
+          "default": null,
+          "examples": [
+              null
+          ]
+      },
+      "configuration": {
+          "title": "The configuration Schema",
+          "type": "object",
+          "default": {},
+          "required": [
+              "validation_type_by_domain",
+              "whitelist_validation",
+              "whitelisted_emails",
+              "blacklisted_emails",
+              "whitelisted_domains",
+              "blacklisted_domains",
+              "blacklisted_mx_ip_addresses",
+              "dns",
+              "not_rfc_mx_lookup_flow",
+              "smtp_fail_fast",
+              "smtp_safe_check",
+              "email_pattern",
+              "smtp_error_body_pattern"
+          ],
+          "additionalProperties": false,
+          "properties": {
+              "validation_type_by_domain": {
+                  "title": "The validation_type_by_domain Schema",
+                  "type": "null",
+                  "default": null,
+                  "examples": [
+                      null
+                  ]
+              },
+              "whitelist_validation": {
+                  "title": "The whitelist_validation Schema",
+                  "type": "boolean",
+                  "default": false,
+                  "examples": [
+                      false
+                  ]
+              },
+              "whitelisted_emails": {
+                  "title": "The whitelisted_emails Schema",
+                  "type": [
+                    "array",
+                    "null"
+                  ],
+                  "default": null,
+                  "items": {
+                      "title": "A Schema",
+                      "type": "string",
+                      "default": "",
+                      "examples": [
+                          "whitelisted@example.com"
+                      ]
+                  },
+                  "examples": [
+                      null,
+                      [
+                          "whitelisted@example.com"
+                      ]
+                  ]
+              },
+              "blacklisted_emails": {
+                  "title": "The blacklisted_emails Schema",
+                  "type": [
+                    "array",
+                    "null"
+                  ],
+                  "default": null,
+                  "items": {
+                      "title": "A Schema",
+                      "type": "string",
+                      "default": "",
+                      "examples": [
+                          "blacklisted@example.com"
+                      ]
+                  },
+                  "examples": [
+                      null,
+                      [
+                          "blacklisted@example.com"
+                      ]
+                  ]
+              },
+              "whitelisted_domains": {
+                  "title": "The whitelisted_domains Schema",
+                  "type": [
+                    "array",
+                    "null"
+                  ],
+                  "default": null,
+                  "items": {
+                      "title": "A Schema",
+                      "type": "string",
+                      "default": "",
+                      "examples": [
+                          "true.com"
+                      ]
+                  },
+                  "examples": [
+                    null,
+                    [
+                        "true.com"
+                    ]
+                ]
+              },
+              "blacklisted_domains": {
+                  "title": "The blacklisted_domains Schema",
+                  "type": [
+                    "array",
+                    "null"
+                  ],
+                  "default": null,
+                  "items": {
+                      "title": "A Schema",
+                      "type": "string",
+                      "default": "",
+                      "examples": [
+                          "false.com"
+                      ]
+                  },
+                  "examples": [
+                    null,
+                    [
+                        "false.com"
+                    ]
+                ]
+              },
+              "blacklisted_mx_ip_addresses": {
+                  "title": "The blacklisted_mx_ip_addresses Schema",
+                  "type": [
+                    "array",
+                    "null"
+                  ],
+                  "default": null,
+                  "items": {
+                    "title": "A Schema",
+                    "type": "string",
+                    "default": "",
+                    "examples": [
+                        "1.2.3.4",
+                        "4.3.2.1"
+                    ]
+                },
+                  "examples": [
+                      null,
+                      [
+                          "1.2.3.4",
+                          "4.3.2.1"
+                      ]
+                  ]
+              },
+              "dns": {
+                  "title": "The dns Schema",
+                  "type": [
+                    "array",
+                    "null"
+                  ],
+                  "default": null,
+                  "examples": [
+                      null,
+                      [
+                          "1.1.1.1",
+                          "2.2.2.2:5353"
+                      ]
+                  ]
+              },
+              "not_rfc_mx_lookup_flow": {
+                  "title": "The not_rfc_mx_lookup_flow Schema",
+                  "type": "boolean",
+                  "default": false,
+                  "examples": [
+                      false
+                  ]
+              },
+              "smtp_fail_fast": {
+                  "title": "The smtp_fail_fast Schema",
+                  "type": "boolean",
+                  "default": false,
+                  "examples": [
+                      false
+                  ]
+              },
+              "smtp_safe_check": {
+                  "title": "The smtp_safe_check Schema",
+                  "type": "boolean",
+                  "default": false,
+                  "examples": [
+                      false
+                  ]
+              },
+              "email_pattern": {
+                  "title": "The email_pattern Schema",
+                  "type": "string",
+                  "default": "",
+                  "examples": [
+                      "default gem value"
+                  ]
+              },
+              "smtp_error_body_pattern": {
+                  "title": "The smtp_error_body_pattern Schema",
+                  "type": "string",
+                  "default": "",
+                  "examples": [
+                      "default gem value"
+                  ]
+              }
+          },
+          "examples": [{
+              "validation_type_by_domain": null,
+              "whitelisted_emails": [
+                  "whitelisted@example.com"
+              ],
+              "blacklisted_emails": [
+                  "blacklisted@example.com"
+              ],
+              "whitelisted_domains": [
+                  "true.com"
+              ],
+              "blacklisted_domains": [
+                  "false.com"
+              ],
+              "blacklisted_mx_ip_addresses": [
+                  "1.2.3.4"
+              ],
+              "whitelist_validation": false,
+              "dns": [
+                "1.1.1.1:5353"
+              ],
+              "not_rfc_mx_lookup_flow": false,
+              "smtp_fail_fast": false,
+              "smtp_safe_check": false,
+              "email_pattern": "default gem value",
+              "smtp_error_body_pattern": "default gem value"
+          }]
+      }
+  },
+  "examples": [{
+      "date": "2022-11-03 10:33:00 +0100",
+      "email": "email@true.com",
+      "validation_type": "whitelist",
+      "success": true,
+      "errors": null,
+      "smtp_debug": null,
+      "configuration": {
+          "validation_type_by_domain": null,
+          "whitelisted_emails": [
+              "whitelisted@example.com"
+          ],
+          "blacklisted_emails": [
+              "blacklisted@example.com"
+          ],
+          "whitelisted_domains": [
+              "true.com"
+          ],
+          "blacklisted_domains": [
+              "false.com"
+          ],
+          "blacklisted_mx_ip_addresses": [
+              "1.2.3.4"
+          ],
+          "whitelist_validation": false,
+          "dns": [
+              "1.1.1.1:5353"
+          ],
+          "not_rfc_mx_lookup_flow": false,
+          "smtp_fail_fast": false,
+          "smtp_safe_check": false,
+          "email_pattern": "default gem value",
+          "smtp_error_body_pattern": "default gem value"
+      }
+  }]
+}

@@ -1,0 +1,114 @@
+---
+
+require:
+  - rubocop-rspec
+  - rubocop-performance
+
+
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  TargetRubyVersion: 3.2
+  NewCops: enable
+
+# Style -----------------------------------------------------------------------
+
+Style/Documentation:
+  Enabled: false
+
+Style/ParallelAssignment:
+  Enabled: false
+
+Style/FetchEnvVar:
+  Enabled: false
+
+Style/RedundantConstantBase:
+  Enabled: false
+
+# Metrics ---------------------------------------------------------------------
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - config/**/*.rb
+    - Rakefile
+    - lib/tasks/**/*.rake
+    - spec/**/*.rb
+
+Metrics/MethodLength:
+  Max: 15
+
+# Layout ----------------------------------------------------------------------
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Naming/InclusiveLanguage:
+  Enabled: false
+
+Layout/ClassStructure:
+  Enabled: true
+  Categories:
+    module_inclusion:
+      - include
+      - prepend
+      - extend
+    associations:
+      - has_one
+      - has_many
+      - belongs_to
+      - has_and_belongs_to_many
+  ExpectedOrder:
+    - module_inclusion
+    - constants
+    - associations
+    - public_class_methods
+    - initializer
+    - public_methods
+    - protected_methods
+    - private_methods
+
+# Lint ------------------------------------------------------------------------
+
+Lint/RaiseException:
+  Enabled: false
+
+Lint/StructNewOverride:
+  Enabled: false
+
+Gemspec/RequireMFA:
+  Enabled: false
+
+# RSpec -----------------------------------------------------------------------
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 22
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+RSpec/MessageChain:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 5
+
+RSpec/StubbedMock:
+  Enabled: false
+
+RSpec/VerifiedDoubleReference:
+  Enabled: false
+
+RSpec/Rails/InferredSpecType:
+  Enabled: false
